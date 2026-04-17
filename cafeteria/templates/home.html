@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<h2 id="categorias">AQUI OFERECEMOS:</h2>
+
+<div class="categorias">
+    {% for categoria in categorias %}
+        <a href="{% url 'cardapio' %}?categoria={{ categoria.id }}" class="card-categoria">
+
+            {% if categoria.imagem %}
+                <img src="{{ categoria.imagem.url }}">
+            {% endif %}
+
+            <h3>{{ categoria.nome }}</h3>
+
+        </a>
+    {% endfor %}
+</div>
+
+<a href="{% url 'cardapio' %}" class="botao-cardapio">VER CARDÁPIO</a>
+
+{% endblock %}

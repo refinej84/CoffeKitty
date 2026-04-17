@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<h2>CARDÁPIO</h2>
+
+<h2 id="filtro">Filtrar por categoria:</h2>
+
+<div class="filtros">
+
+    <a href="{% url 'cardapio' %}">Todos</a>
+
+    {% for categoria in categorias %}
+        <a href="{% url 'cardapio' %}?categoria={{ categoria.id }}">
+            {{ categoria.nome }}
+        </a>
+    {% endfor %}
+
+</div>
+
+{% for produto in produtos %}
+<div class="produto">
+    <img src="{{ produto.imagem.url }}">
+
+    <div class="produto-info">
+        <h3>{{ produto.nome }}</h3>
+        <p>{{ produto.descricao }}</p>
+        <p><strong>R$ {{ produto.preco }}</strong></p>
+        <a href="{% url 'add_lista' produto.id %}" class="botao">
+            Adicionar 💖
+        </a>
+    </div>
+</div>
+{% empty %}
+<p>Nenhum produto cadastrado</p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<h2>LISTA DE DESEJOS</h2>
+
+{% for item in itens %}
+<div class="produto">
+    <img src="{{ item.produto.imagem.url }}">
+
+        <h3>{{ item.produto.nome }}</h3>
+        <p><strong>R$ {{ item.produto.preco }}</strong></p>
+        <a href="{% url 'remover_lista' item.id %}" class="botao-remover">Remover da lista</a>
+</div>
+{% endfor %}
+
+{% endblock %}

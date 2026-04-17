@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Coffee Kitty</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="topo">
+    <img src="{% static 'imgs/logo.png' %}" class="logo">
+
+    <nav>
+        <a href="{% url 'home' %}">MENU</a>
+        <a href="{% url 'informacoes' %}">INFORMAÇÕES</a>
+        <a href="{% url 'lista' %}">LISTA DE DESEJOS</a>
+        <a href="{% url 'logout' %}">SAIR</a>
+    </nav>
+</header>
+
+<div class="conteudo">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
