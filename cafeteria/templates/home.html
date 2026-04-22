@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<h2 id="categorias">AQUI OFERECEMOS:</h2>
+
+<div class="categorias">
+    {% for categoria in categorias %}
+        <a href="{% url 'cardapio' %}?categoria={{ categoria.id }}" class="card-categoria">
+
+            {% if categoria.imagem %}
+                <img src="{{ categoria.imagem.url }}">
+            {% endif %}
+
+            <h3 style="color: rgb(255, 255, 255);">{{ categoria.nome }}</h3>
+
+        </a>
+    {% endfor %}
+</div>
+
+<a href="{% url 'cardapio' %}" class="botao-cardapio">VER CARDÁPIO</a>
+
+<div id="sobre" class="info-home">
+
+    <div class="texto">
+        <h2>Sobre a Coffee Kitty ☕</h2>
+
+        <p>
+            A Coffee Kitty é uma cafeteria encantadora inspirada no universo
+            da Hello Kitty, trazendo toda a delicadeza e fofura para uma
+            experiência única e acolhedora.
+
+            Com uma paleta em tons de rosa e branco, o design combina
+            lacinhos, corações e detalhes suaves que tornam cada visita
+            ao site ainda mais especial.
+        </p>
+    </div>
+
+    <div class="imagem">
+        <img src="{% static 'cafeteria/imgs/kitty.png' %}">
+    </div>
+
+</div>
+
+<div class="info-mapa">
+
+    <div class="texto-mapa">
+        <h2>Venha nos visitar</h2>
+
+        <p>
+            Venha viver uma experiência doce e encantadora, com bebidas,
+            salgados e sobremesas inspiradas no universo Hello Kitty.
+        </p>
+    </div>
+
+    <div class="mapa">
+        <iframe 
+            src="https://www.google.com/maps?q=Rua+Rio+de+Janeiro+471+Belo+Horizonte&output=embed"
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+</div>
+
+{% endblock %}
