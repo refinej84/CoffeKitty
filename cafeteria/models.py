@@ -23,3 +23,6 @@ class Produto(models.Model):
 class ListaDesejos(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('usuario', 'produto')

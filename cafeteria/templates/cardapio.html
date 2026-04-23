@@ -4,7 +4,7 @@
 
 {% load static %}
 
-<h2>CARDÁPIO</h2>
+<h2 id="cardapiotexto">CARDÁPIO</h2>
 
 <h2 id="filtro">Filtrar por categoria:</h2>
 
@@ -30,7 +30,7 @@
     </div>
 </div>
 {% empty %}
-<p>Nenhum produto cadastrado</p>
+<p id="texto2">Nenhum produto cadastrado</p>
 {% endfor %}
 
 {% endblock %}

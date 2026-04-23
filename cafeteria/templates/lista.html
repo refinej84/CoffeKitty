@@ -4,7 +4,11 @@
 
 {% load static %}
 
-<h2>LISTA DE DESEJOS</h2>
+<h2 id="cardapiotexto">LISTA DE DESEJOS</h2>
+
+<div class="resumo-lista">
+    Total: R$ {{ total|floatformat:2 }}
+</div>
 
 {% for item in itens %}
 <div class="produto">
