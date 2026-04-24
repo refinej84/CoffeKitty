@@ -1,10 +1,4 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
-
-## Coffee Kitty
+# Coffee Kitty
 
 Projeto web desenvolvido com Django que simula uma cafeteria temática inspirada na Hello Kitty.  
 O sistema permite visualizar categorias, produtos, informações da loja e gerenciar uma lista de desejos.
