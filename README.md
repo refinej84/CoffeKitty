@@ -80,7 +80,7 @@ venv\Scripts\activate
 
 4. Instalar dependências
 ```bash
-pip install django whitenoise
+pip install django whitenoise djangorestframework
 ```
 
 5. Rodar migrações
